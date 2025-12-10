@@ -1,70 +1,112 @@
-# Getting Started with Create React App
+# afaq-frontend – محور سوشال (React Dashboard)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+هذا المستودع يحتوي على واجهة **محور سوشال** المبنية بـ React، مع دعم لغتين (العربية/الإنجليزية)، وتكامل مع API الباك‑إند في مستودع `SM_APP`.
 
-## Available Scripts
+## المزايا الحالية
 
-In the project directory, you can run:
+- شاشة تسجيل دخول مرتبطة بمصادقة JWT في الباك‑إند.
+- لوحة داشبورد تعرض:
+  - إحصاءات المنشورات (مسودات، مجدولة، منشورة).
+  - آخر المنشورات مع حالة كل منشور.
+  - حسابات السوشال المرتبطة.
+- دعم لغتين (العربية/الإنجليزية) مع تبديل فوري.
+- تخزين التوكنات (`accessToken`, `refreshToken`) في `localStorage`.
+- منطق ذكي لاختيار الباك‑إند:
+  - عند العمل المحلي: الاتصال بـ `http://127.0.0.1:8000`.
+  - من GitHub Pages: الاتصال بـ `https://sm-app.up.railway.app` (أو رابط الإنتاج).
 
-### `npm start`
+## هيكلة المجلد `src`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+src/
+api/
+index.js # login, fetchDashboardApi, ودوال API أخرى
+config/
+index.js # API_BASE_URL + منطق localhost vs Railway
+i18n/
+index.js # createTranslator
+locales/
+ar.json # نصوص الواجهة بالعربية
+en.json # نصوص الواجهة بالإنجليزية
+components/
+LoginForm.js # شاشة تسجيل الدخول
+Dashboard.js # لوحة التحكم (إحصاءات + منشورات + حسابات)
+App.js # تحكّم بالحالة العامة (تسجيل الدخول، اللغة، البيانات)
+App.css
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+هذه الهيكلة تجعل إعادة الاستخدام أو الانتقال إلى Next.js لاحقًا أسهل بكثير.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## إعداد وتشغيل الواجهة محليًا
 
-### `npm run build`
+cd D:\Projects\python\afaq-frontend
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+npm install
+npm start
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+سيتم فتح التطبيق على:
 
-### `npm run eject`
+- <http://localhost:3000/afaq-frontend>
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### الربط مع الباك‑إند
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+في `src/config/index.js`:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+const isLocalhost = window.location.hostname === "localhost";
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+export const API_BASE_URL = isLocalhost
+? "http://127.0.0.1:8000"
+: "https://sm-app.up.railway.app"; // عدّل هذا الرابط عند تغيير منصة الباك‑إند
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- أثناء التطوير محليًا: شغّل Django على `127.0.0.1:8000` ثم `npm start`.
+- من GitHub Pages: الطلبات تذهب تلقائيًا إلى باك‑إند الإنتاج (Railway حاليًا).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## النشر على GitHub Pages
 
-### Code Splitting
+استخدم حزمة `gh-pages` لنشر الإصدار الإنتاجي:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### سكربتات `package.json`
 
-### Analyzing the Bundle Size
+"homepage": "https://Ihsan76.github.io/afaq-frontend",
+"scripts": {
+"start": "react-scripts start",
+"build": "react-scripts build",
+"predeploy": "npm run build",
+"deploy": "gh-pages -d build"
+}
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### أوامر النشر
 
-### Making a Progressive Web App
+npm run deploy
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-### Advanced Configuration
+بعدها تصبح الواجهة متاحة على:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+- <https://Ihsan76.github.io/afaq-frontend>
 
-### Deployment
+مع ربط كامل بالباك‑إند على Railway.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## الترجمة (i18n)
 
-### `npm run build` fails to minify
+- ملفات الترجمة:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+  - `src/i18n/locales/ar.json`
+  - `src/i18n/locales/en.json`
+
+- تستخدم دالة `createTranslator` من `src/i18n/index.js` لتوفير:
+  - `t(key)` لترجمة النصوص.
+  - `direction` (rtl/ltr) لضبط الإتجاه.
+- حالات المنشور (`draft`, `scheduled`, `published`) تُترجم عبر مفاتيح:
+
+  - `post.status.draft`
+  - `post.status.scheduled`
+  - `post.status.published`
+
+ما يجعل البيانات القادمة من الباك‑إند تظهر بالعربية أو الإنجليزية حسب اختيار المستخدم.
+
+## الخطوات التالية المحتملة
+
+- إضافة شاشة إدارة حسابات السوشال (عرض/إضافة/تعديل/حذف) مبنية على نفس API الحالي.
+- إضافة CRUD كامل للمنشورات (إنشاء، تعديل، حذف، جدولة).
+- إمكانية الانتقال مستقبلاً إلى Next.js مع إعادة استخدام `components`, `api`, `i18n` كما هي تقريبًا.
