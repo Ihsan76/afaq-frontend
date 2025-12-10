@@ -1,0 +1,24 @@
+{
+  "langName": "العربية",
+  "direction": "rtl",
+  "login": {
+    "title": "تسجيل الدخول إلى محور سوشال",
+    "username": "اسم المستخدم",
+    "password": "كلمة المرور",
+    "submit": "دخول",
+    "loading": "جارٍ التحميل...",
+    "errorPrefix": "خطأ:"
+  },
+  "dashboard": {
+    "title": "لوحة محور سوشال",
+    "statsDraft": "مسودات",
+    "statsScheduled": "مجدولة",
+    "statsPublished": "منشورة",
+    "recentPosts": "آخر المنشورات",
+    "noPosts": "لا توجد منشورات بعد.",
+    "socialAccounts": "حسابات التواصل المرتبطة",
+    "noAccounts": "لا توجد حسابات مرتبطة بعد.",
+    "noData": "لا توجد بيانات بعد، جرّب تحديث الصفحة.",
+    "logout": "تسجيل الخروج"
+  }
+}

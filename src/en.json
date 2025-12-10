@@ -1,0 +1,24 @@
+{
+  "langName": "English",
+  "direction": "ltr",
+  "login": {
+    "title": "Sign in to Mahwar Social",
+    "username": "Username",
+    "password": "Password",
+    "submit": "Sign in",
+    "loading": "Loading...",
+    "errorPrefix": "Error:"
+  },
+  "dashboard": {
+    "title": "Mahwar Social Dashboard",
+    "statsDraft": "Drafts",
+    "statsScheduled": "Scheduled",
+    "statsPublished": "Published",
+    "recentPosts": "Latest posts",
+    "noPosts": "No posts yet.",
+    "socialAccounts": "Connected social accounts",
+    "noAccounts": "No accounts connected yet.",
+    "noData": "No data yet, try refreshing.",
+    "logout": "Log out"
+  }
+}
