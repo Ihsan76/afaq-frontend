@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
 import "./App.css";
 import { createTranslator } from "./i18n";
-import LoginForm from "./LoginForm";
-import Dashboard from "./Dashboard";
+
+import LoginForm from "./components/LoginForm";
+import Dashboard from "./components/Dashboard";
+
 import { fetchDashboardApi } from "./api";
 
 function App() {

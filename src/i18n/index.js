@@ -1,8 +1,10 @@
 // src/i18n.js
 
 // نستخدم require لتفادي مشاكل استيراد JSON في بعض الإعدادات
-const ar = require('./ar.json');
-const en = require('./en.json');
+
+import ar from "./locales/ar.json";
+import en from "./locales/en.json";
+
 
 export const translations = {
   ar,

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { login } from "./api";
+import { login } from "../api";
 
 function LoginForm({ t, direction, locale, setLocale, onSuccess, initialUsername = "ihsan" }) {
   const [username, setUsername] = useState(initialUsername);
