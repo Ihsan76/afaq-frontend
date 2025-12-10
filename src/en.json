@@ -20,5 +20,12 @@
     "noAccounts": "No accounts connected yet.",
     "noData": "No data yet, try refreshing.",
     "logout": "Log out"
+  },
+  "post": {
+  "status": {
+    "draft": "draft",
+    "scheduled": "scheduled",
+    "published": "published"
+    }
   }
 }

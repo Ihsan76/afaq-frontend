@@ -1,5 +1,18 @@
 import React from "react";
 
+function getStatusLabel(t, status) {
+  switch (status) {
+    case "draft":
+      return t("post.status.draft");
+    case "scheduled":
+      return t("post.status.scheduled");
+    case "published":
+      return t("post.status.published");
+    default:
+      return status;
+  }
+}
+
 function Dashboard({ t, direction, locale, setLocale, data, onLogout }) {
   const { stats, recent_posts, social_accounts } = data;
 
@@ -55,7 +68,7 @@ function Dashboard({ t, direction, locale, setLocale, data, onLogout }) {
           <ul>
             {recent_posts.map((post) => (
               <li key={post.id}>
-                <strong>{post.status}</strong> — {post.content.slice(0, 80)}
+                <strong>{getStatusLabel(t, post.status)}</strong> — {post.content.slice(0, 80)}
               </li>
             ))}
           </ul>
