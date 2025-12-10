@@ -22,10 +22,35 @@
     "logout": "Log out"
   },
   "post": {
-  "status": {
-    "draft": "draft",
-    "scheduled": "scheduled",
-    "published": "published"
-    }
+    "managerTitle": "Posts manager",
+    "latestTitle": "Latest posts",
+    "addTitle": "Add new post",
+    "content": "Post content",
+    "platforms": "Target platforms",
+    "addButton": "Save post",
+    "addSuccess": "Post saved successfully",
+    "status": {
+      "draft": "Draft",
+      "scheduled": "Scheduled",
+      "published": "Published"
+    },
+    "statusLabel": "Post status",
+    "scheduledAt": "Scheduled time"
+  },
+  "social": {
+    "addAccountTitle": "Add new account",
+    "platform": "Platform",
+    "accountName": "Account name",
+    "accountUrl": "Account URL",
+    "addButton": "Add account",
+    "refresh": "Refresh list",
+    "openAccount": "Open account",
+    "inactive": "Inactive",
+    "addSuccess": "Account saved successfully",
+    "platformPlaceholder": "Select platform",
+    "delete": "Delete",
+    "deleteSuccess": "Account deleted successfully",
+    "edit": "Edit",
+    "updateSuccess": "Account updated successfully"
   }
 }

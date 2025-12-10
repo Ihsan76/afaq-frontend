@@ -4,8 +4,11 @@ import { createTranslator } from "./i18n";
 
 import LoginForm from "./components/LoginForm";
 import Dashboard from "./components/Dashboard";
+// احذف هذا السطر إن وجد:
+// import SocialAccountsManager from "./components/SocialAccountsManager";
 
-import { fetchDashboardApi } from "./api";
+
+import { fetchDashboardApi } from "./api/index";
 
 function App() {
   const [locale, setLocale] = useState("ar");

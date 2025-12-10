@@ -20,13 +20,37 @@
     "noAccounts": "لا توجد حسابات مرتبطة بعد.",
     "noData": "لا توجد بيانات بعد، جرّب تحديث الصفحة.",
     "logout": "تسجيل الخروج"
-  }  ,
+  },
   "post": {
+    "managerTitle": "إدارة المنشورات",
+    "latestTitle": "أحدث المنشورات",
+    "addTitle": "إضافة منشور جديد",
+    "content": "محتوى المنشور",
+    "platforms": "المنصات المستهدفة",
+    "addButton": "حفظ المنشور",
+    "addSuccess": "تم حفظ المنشور بنجاح",
     "status": {
       "draft": "مسودة",
-      "scheduled": "مجدولة",
-      "published": "منشورة"
-    }
+      "scheduled": "مجدول",
+      "published": "منشور"
+    },
+    "statusLabel": "حالة المنشور",
+    "scheduledAt": "وقت الجدولة"
+  },
+  "social": {
+    "addAccountTitle": "إضافة حساب جديد",
+    "platform": "المنصة",
+    "accountName": "اسم الحساب",
+    "accountUrl": "رابط الحساب",
+    "addButton": "إضافة الحساب",
+    "refresh": "تحديث القائمة",
+    "openAccount": "فتح الحساب",
+    "inactive": "غير فعال",
+    "addSuccess": "تم حفظ الحساب بنجاح",
+    "platformPlaceholder": "اختر المنصة",
+    "delete": "حذف",
+    "deleteSuccess": "تم حذف الحساب بنجاح",
+    "edit": "تعديل",
+    "updateSuccess": "تم تحديث الحساب بنجاح"
   }
-
 }
